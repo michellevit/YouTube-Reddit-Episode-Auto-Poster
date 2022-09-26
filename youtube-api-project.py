@@ -99,7 +99,7 @@ reddit = praw.Reddit(
 )
 
 # get subreddit
-subreddit = reddit.subreddit("mics_test_community")
+subreddit = reddit.subreddit("")
 
 # Add to database and post onto subreddit, if the episode has not already been added to the database or posted to the subreddit
 if len(myresult) >= 1:
