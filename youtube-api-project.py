@@ -98,6 +98,11 @@ reddit = praw.Reddit(
 ## Get subreddit
 subreddit = reddit.subreddit("")
 
+## Check to make sure user has entered a subreddit
+if subreddit == "":
+  console.log("Please enter a subreddit (on line 99) before running this script")
+ 
+
 ## Add to database and post onto subreddit, if the episode has not already been added to the database or posted to the subreddit
 if len(myresult) >= 1:
     print("ERROR: Podcast episode #{} is already in the database".format(episode_number))
