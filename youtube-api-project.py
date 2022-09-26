@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 
 
-## CREDENTIALS (in .env file, and ignored by git with .gitignore file): 
+# CREDENTIALS (in .env file, and ignored by git with .gitignore file): 
 load_dotenv()
 yt_api_key = os.getenv("yt_api_key")
 db_user = os.getenv("db_user")
@@ -16,14 +16,14 @@ reddit_username = os.getenv("reddit_username")
 reddit_password = os.getenv("reddit_password")
 
 
-## GET YOUTUBE VIDEO DATA
+# GET YOUTUBE VIDEO DATA
 
 youtube = build('youtube', 'v3', developerKey=yt_api_key) 
 
 yt_channel_id = 'UCSHZKyawb77ixDdsGog4iWA'
 
 
-## VIDEO DATA USING ACTUAL YOUTUBE DATA API REQUESTS
+# VIDEO DATA USING ACTUAL YOUTUBE DATA API REQUESTS
 
 search_response = youtube.search().list(part="id",
                                             type='video',
@@ -45,15 +45,13 @@ video_title = videos_response['items'][0]['snippet']['title']
 ## TEST DATA (SO YOU DON'T EXCEED REQUEST QUOTA WITH YOUTUBE DATA API)
 
 # video_id = "SK4kMPmgKW8"
-
 # video_title = "Christopher Capozzola: World War I, Ideology, 'Propaganda, and Politics | Lex Fridman Podcast #320"
-
 # video_date = "2022-09-14"
-
 # video_url = "https://www.youtube.com/watch?v=" + video_id
 
 
-# Get episode number
+# GET EPISODE NUMBER
+
 if video_title.find('#'):
     location_of_hash = video_title.find('#')
     episode_number = ''
@@ -64,8 +62,7 @@ if video_title.find('#'):
                 episode_number += number_to_add
 
 
-
-# Create connection to database
+# CREATE CONNECTION TO DATABASE
 
 db = mysql.connector.connect(
     host="localhost",
@@ -74,14 +71,14 @@ db = mysql.connector.connect(
     database="uploaded_videos_database"
 )
 
-# Create a cursor
 
+## Create a Cursor
 mycursor = db.cursor()
 
-# Create database (if it does not already exist)
+## Create database (if it does not already exist)
 mycursor.execute("CREATE DATABASE IF NOT EXISTS uploaded_videos_database")
 
-# Create a table (if it does not already exist)
+## Create a table (if it does not already exist)
 mycursor.execute("CREATE TABLE IF NOT EXISTS Videos (date VARCHAR(10), youtubeID VARCHAR(25), title VARCHAR(255), episodeNum int UNSIGNED,videoID int PRIMARY KEY AUTO_INCREMENT)")
 
 query_check = "SELECT * FROM Videos WHERE youtubeID = (%s)"
@@ -89,7 +86,7 @@ value_check = video_id
 mycursor.execute(query_check, (value_check,))
 myresult = mycursor.fetchall()
 
-# reddit credentials
+## Reddit Credentials
 reddit = praw.Reddit(
     client_id=reddit_client_id,
     client_secret=reddit_client_secret,
@@ -98,10 +95,10 @@ reddit = praw.Reddit(
     password=reddit_password
 )
 
-# get subreddit
+## Get subreddit
 subreddit = reddit.subreddit("")
 
-# Add to database and post onto subreddit, if the episode has not already been added to the database or posted to the subreddit
+## Add to database and post onto subreddit, if the episode has not already been added to the database or posted to the subreddit
 if len(myresult) >= 1:
     print("ERROR: Podcast episode #{} is already in the database".format(episode_number))
 elif "Lex Fridman Podcast #" not in video_title:
@@ -124,10 +121,7 @@ else:
         print("New podcast episode #{} has been posted to the {} subreddit".format(episode_number, subreddit))
 
 
-
-
-
-#### CODE FOR TESTING + TROUBLESHOOTING
+# CODE FOR TESTING + TROUBLESHOOTING
 
 ## Print all records from table:
 # mycursor.execute("SELECT * FROM Videos")
