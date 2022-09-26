@@ -77,6 +77,7 @@ Double click the 'run_script.bat' file
 ----------
 6. Troubleshooting: 
 * If an error code at line 117 is thrown, it is likely due to issues with the Reddit authentification, so double-check the credentials are correct
+* Ensure that the 'subreddit' variable has been edited before running script (the subreddit was not automatically entered to avoid accidentally spamming actual subreddit)
 
 
 ----------
