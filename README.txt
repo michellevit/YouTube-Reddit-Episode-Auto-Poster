@@ -18,7 +18,7 @@ Table of Contents:
 
 This Python script checks the Lex Fridman YouTube channel for the latest podcast episode, and posts the video to the Lex Fridman subreddit (if it has not already been posted).
 
-*Note: to avoid spamming the actual Lex Fridman subreddit, a test subreddit (i.e. mics_test_community) has been used in this script
+*Note: to avoid spamming the actual Lex Fridman subreddit, a test subreddit was used when testing this script
 
 
 ----------
