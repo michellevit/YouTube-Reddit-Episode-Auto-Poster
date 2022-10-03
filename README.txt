@@ -44,17 +44,17 @@ Other:
 
 -Install Python 3.9.13 or higher
 -Create Virtual Environment (https://www.youtube.com/watch?v=APOPm01BVrk&t=0s) : 
--- open terminal
--- cd into folder
--- create Python environment: python -m venv project_yt_api
--- activate the virtual environment: project_yt_api\Scripts\activate.bat
--- install google api: project_yt_api\Scripts\pip.exe install google-api-python-client
+--open terminal
+--cd into folder
+--create Python environment: python -m venv project_yt_api
+--activate the virtual environment: project_yt_api\Scripts\activate.bat
+--install google api: project_yt_api\Scripts\pip.exe install google-api-python-client
 --install mysql.connector: pip install mysql.connector
 --install praw: pip install praw
--install dotenv: pip install dotenv
+-Install dotenv: pip install dotenv
 -Download mySQL (https://dev.mysql.com/downloads/installer/)
 -Create a local .env file with the credentials listed in lines 10-16
--if uploading to git: create a .gitignore file with the text '.env' inside 
+-If uploading to git: create a .gitignore file with the text '.env' inside 
 
 
 ----------
