@@ -32,11 +32,10 @@ Libraries:
 -os
 -dotenv
 Other:
--pip
--a google account
+-a Google account
 -a YouTube API key
--a reddit account
--a reddit API key
+-a Reddit account
+-a Reddit API key
 -mySQL Workbench
 
 
