@@ -60,14 +60,14 @@ This Python script checks the Lex Fridman YouTube channel for the latest podcast
 - Double click the 'run_script.bat' file
 
 
-## Troubleshooting<a name="troubleshooting"></a>
-- If an error code at line 117 is thrown, it is likely due to issues with the Reddit authentification, so double-check the credentials are correct
-- Ensure that the 'subreddit' variable has been edited before running script (the subreddit was not automatically entered to avoid accidentally spamming actual subreddit)
-
-
 ## FAQ<a name="faq"></a>
 - This script will only post videos from the Lex Fridman channel which are podcast episodes (must have the text 'Lex Fridman Podcast #' in the title
 - This script will check the last 20 posts on the subreddit, and if a post exists with the same video title (AKA if another user has already posted the video), then the video will not be posted to the subreddit
+  
+
+## Troubleshooting<a name="troubleshooting"></a>
+- If an error code at line 117 is thrown, it is likely due to issues with the Reddit authentification, so double-check the credentials are correct
+- Ensure that the 'subreddit' variable has been edited before running script (the subreddit was not automatically entered to avoid accidentally spamming actual subreddit)
 
 
 ## Credits<a name="credits"></a>
