@@ -1,6 +1,10 @@
 # YouTube-Reddit Auto Post Script 
 
 
+![Python](https://img.shields.io/badge/Python-3.9-blue.svg)
+![YouTube API](https://img.shields.io/badge/YouTube%20API-v3-red.svg)
+
+
 ## Table of Contents
 - [Project Description](#project-description)
 - [Requirements](#requirements)
@@ -19,7 +23,7 @@ This Python script checks the Lex Fridman YouTube channel for the latest podcast
 
 ## Requirements<a name="requirements"></a>
 - Libraries: 
-  - Python 3.9 or higher
+  - Python 3.9
   - googleapiclient
   - mysql.connector
   - praw
