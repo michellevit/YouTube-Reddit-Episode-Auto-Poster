@@ -1,4 +1,4 @@
-# YouTube-Reddit Auto Post Script 
+# YouTube-Reddit Episode Auto Poster
 
 
 ![Python](https://img.shields.io/badge/Python-3.9-blue.svg)
