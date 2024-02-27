@@ -5,8 +5,10 @@
 ![YouTube API](https://img.shields.io/badge/YouTube%20API-v3-red.svg)
 
 
+A Python script which checks the Lex Fridman YouTube channel for the latest podcast episode, and posts the video to the Lex Fridman subreddit (if it has not already been posted).
+
+
 ## Table of Contents
-- [Project Description](#project-description)
 - [Requirements](#requirements)
 - [Resources](#resources)
 - [How To Install](#how-to-install)
@@ -14,11 +16,6 @@
 - [FAQ](#faq)
 - [Troubleshooting](#troubleshooting)
 - [Credits](#credits)
-
-
-## Project Description<a name="project-description"></a>
-This Python script checks the Lex Fridman YouTube channel for the latest podcast episode, and posts the video to the Lex Fridman subreddit (if it has not already been posted).
-*Note: to avoid spamming the actual Lex Fridman subreddit, a test subreddit was used when testing this script (the 'subreddit variable (line 99) must be edited before running the script)
 
 
 ## Requirements<a name="requirements"></a>
@@ -67,7 +64,8 @@ This Python script checks the Lex Fridman YouTube channel for the latest podcast
 ## FAQ<a name="faq"></a>
 - This script will only post videos from the Lex Fridman channel which are podcast episodes (must have the text 'Lex Fridman Podcast #' in the title
 - This script will check the last 20 posts on the subreddit, and if a post exists with the same video title (AKA if another user has already posted the video), then the video will not be posted to the subreddit
-  
+- To avoid spamming the actual Lex Fridman subreddit, a test subreddit was used when testing this script (the 'subreddit variable (line 99) must be edited before running the script)
+
 
 ## Troubleshooting<a name="troubleshooting"></a>
 - If an error code at line 117 is thrown, it is likely due to issues with the Reddit authentification, so double-check the credentials are correct
